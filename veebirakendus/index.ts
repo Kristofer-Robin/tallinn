@@ -1,5 +1,8 @@
 import express, { Express, Request, Response } from "express";
 import stringsController from "./controllers/strings";
+import productsController from "./controllers/products";
+import productlistController from "./controllers/productlist"
+
 
 const app: Express = express();
 
@@ -7,6 +10,8 @@ app.get('/', (req: Request, res: Response) => {
     res.send('Express + TypeScript Server');
 });
 
+app.use('/', productlistController);
+app.use('/', productsController);
 app.use('/', stringsController);
 
 app.listen(3000,() => {
