@@ -4,9 +4,9 @@ import bodyParser from "body-parser";
 import stringsController from "./controllers/strings";
 import productsController from "./controllers/products";
 import productListController from "./controllers/productlist";
-import parcelmachines from "./controllers/parcelmachines";
-import nordpool from "./controllers/nordpool";
-import tax from "./controllers/tax";
+import parcelmachinesController from "./controllers/parcelmachines";
+import nordpoolController from "./controllers/nordpool";
+import taxController from "./controllers/tax";
 
 const app: Express = express();
 
@@ -22,9 +22,9 @@ app.get('/', (req: Request, res: Response) => {
 app.use('/', stringsController);
 app.use('/', productsController);
 app.use('/', productListController);
-app.use('/', parcelmachines);
-app.use('/', nordpool);
-app.use('/', tax);
+app.use('/', parcelmachinesController);
+app.use('/', nordpoolController);
+app.use('/', taxController);
 
 app.listen(3000,() => {
     console.log(`[server]: Server is running at http://localhost:3000`);

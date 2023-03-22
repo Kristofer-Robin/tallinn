@@ -3,9 +3,9 @@ import axios from "axios";
 
 const router: Router = Router();
 
-router.get("/nord-pool-price", async (req: Request, res: Response) => {
+router.get("/nord-pool-price/:country/:start/:end", async (req: Request, res: Response) => {
     const response = await axios.get(
-        "https://dashboard.elering.ee/api/nps/price?start="+req.query.start+"&end="+req.query.end
+        "https://dashboard.elering.ee/api/nps/price?start="+req.params.start+"&end="+req.params.end
     );
     switch(req.params.country) {
         case "ee":
